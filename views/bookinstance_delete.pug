@@ -1,0 +1,15 @@
+extends layout
+
+block content 
+    h1 Delete Copy id:#{bookinstance._id}
+
+    p #[strong Title: ] 
+        a(href=bookinstance.book.url) #{bookinstance.book.title}
+    
+    div(style='margin-left:20px; margin-top:20px')
+        p Do you really want to delete this copy?
+
+        form(method='POST' action='')
+            div.form-group
+                input#bookinstanceid.form-control(type='hidden', name='bookinstanceid', required='true', value=bookinstance._id)
+            button.btn.btn-primary(type='submit') Delete
