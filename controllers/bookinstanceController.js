@@ -44,6 +44,7 @@ exports.bookinstance_create_get = (req, res, next) => {
     res.render("bookinstance_form", {
       title: "Create BookInstance",
       book_list: books,
+      bookinstance: "",
     });
   });
 };
@@ -69,7 +70,6 @@ exports.bookinstance_create_post = [
         res.render("bookinstance_form", {
           title: "Create BookInstance",
           book_list: books,
-          selected_book: bookinstance.book._id,
           errors: errors.array(),
           bookinstance,
         });
